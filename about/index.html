@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<meta  lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff" id="theme-color">
+  <link rel="icon" href="/img/Kaze.png">
+  <title>theme-kaze demo</title>
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+    var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+      }
+    };
+    setDarkmode();
+  </script>
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  </script>
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_vpj3dq9ceqa.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  <link rel="preload" href="//cdn.jsdelivr.net/npm/fslightbox@3.1.0/index.min.js" as="script">
+  
+  
+  <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_vpj3dq9ceqa.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <div class="wrapper">
+    
+    <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+      <img class="navbar-logo-img" src="/img/Kaze.png">
+      
+      <span class="navbar-logo-dsc">theme-kaze demo</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+    <a href="/" class="navbar-menu-item">Home </a>
+    
+    <a href="/archives" class="navbar-menu-item">Archive </a>
+    
+    <a href="/tags" class="navbar-menu-item">Tags </a>
+    
+    <a href="/categories" class="navbar-menu-item">Categories </a>
+    
+    <a href="/about" class="navbar-menu-item">About </a>
+    
+    <a href="/links" class="navbar-menu-item">Friends </a>
+    
+    <a class="navbar-menu-item darknavbar" id="dark"><i class="iconfont icon-weather"></i></a>
+  </div>
+</nav>
+    
+    <div class="section-wrap">
+      <div class="container">
+        <div class="columns">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2018-11-11T00:24:49.000Z" style="display: flex; align-items: center;">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2018-11-11</span>
+    </time>
+    
+    
+    <span class="dot"></span>
+    <span>915 words</span>
+    
+  </div>
+  
+  </header>
+  <div id="section" class="post-content">
+    <h4 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h4><hr>
+<p>分享很喜欢的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%97%E6%B0%B8%E6%B5%A9/26814?fr=aladdin">老罗</a>的一段话：</p>
+<blockquote>
+<p>“<em><strong>每一个生命来到世间都注定改变世界，别无选择。要么变得好一点，要么变得坏一点。你如果走进社会为了生存为了什么不要脸的理由，变成了一个恶心的成年人社会中的一员，那你就把这个世界变得恶心了一点点。如果你一生刚正不阿，如果你一生耿直，没有做任何恶心的事情，没做对别人有害的事情，一辈子拼了老命勉强把自己身边的几个人照顾好了，没有成名没有发财，没有成就伟大的事业，然后耿着脖子一生正直，到了七八十岁耿着脖子去世了。你这一生是不是没有改变世界？你还是改变世界了，你把这个世界变得美好了一点点。因为世界上又多了一个好人。</strong></em>“</p>
+</blockquote>
+<p>善恶终有报,天道好轮回。不信抬头看,苍天饶过谁。<br>无论何时何地，我们都要保持一颗积极乐观、善良感恩的心。<br>但行好事莫问前程，永远年轻，永远热内盈眶，永远保持<strong>正能量</strong>。<br>💪💪💪💪💪💪冲鸭！！！！</p>
+<p>-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>个人信息：<br>计算机科学与技术专业<br>从事JAVA后端开发<br>码畜一枚<br>坚信代码改变世界</p>
+<br>
+
+<h4 id="博客信息"><a href="#博客信息" class="headerlink" title="博客信息"></a>博客信息</h4><hr>
+<ul>
+<li>网站采用的<a target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-icarus">Icarus主题</a> </li>
+<li>追求尽可能的简洁，清晰，易用。</li>
+<li>在Icarus主题之上进行了部分修改。</li>
+</ul>
+<p><em><strong>更新日志：</strong></em><br>–<em>2020.09.20：icarus4.0适配</em><br>–<em>2020.01.18：icarus3.0适配</em><br>–<em>2019.11.17：增加深色主题开关</em><br>–<em>2019.10.30：去图，精简卡片</em><br>–<em>2019.10.22：改版部分显示，优化速度</em><br>–<em>2019.10.16：文章列表加上评论数显示</em><br>–<em>2019.10.13：改版评论</em><br>–<em>2019.09.25：图片、资源接入CDN免费jsDelivr、文章加入置顶</em><br>–<em>2019.09.19：开源<a target="_blank" rel="noopener" href="https://github.com/removeif/hexo-theme-icarus-removeif">博客代码</a></em><br>–<em>2019.09.19：修改布局，拉伸布局，更宽的展示</em><br>–<em>2019.09.18：修改友链ui为一行三个，并适配移动端，暗黑模式文章增加评论链接，增加留言链接</em><br>–<em>2019.09.14：增加<a target="_blank" rel="noopener" href="https://removeif.github.io/remove.io/">精简next主题</a></em><br>–<em>2019.09.14：利用中秋节放假，重做了首页的热门推荐、加个widget最新评论框、归档页加入文章贡献概览面板</em></p>
+<br>
+
+<h4 id="本站推荐索引"><a href="#本站推荐索引" class="headerlink" title="本站推荐索引"></a>本站推荐索引</h4><hr>
+<p><strong>博客主题相关</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/github-Issue-%E4%BD%9C%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%BE%AE%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BA%94%E7%94%A8.html">github Issue 作为博客微型数据库的应用</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/github-page%E7%BD%91%E7%AB%99cdn%E4%BC%98%E5%8C%96%E5%8A%A0%E9%80%9F.html">github page网站cdn优化加速</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB.html">博客源码分享</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/%E5%8D%9A%E5%AE%A2%E6%8D%A2%E8%82%A4%E7%9A%84%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E6%80%9D%E8%B7%AF.html">博客换肤的一种实现方式思路</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/%E5%8D%9A%E5%AE%A2%E4%B8%ADgitalk%E6%9C%80%E6%96%B0%E8%AF%84%E8%AE%BA%E7%9A%84%E8%8E%B7%E5%8F%96.html">博客中gitalk最新评论的获取</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0picgo%E5%B7%A5%E5%85%B7github%E5%9B%BE%E4%BC%A0%E4%BD%BF%E7%94%A8.html">博客图片上传picgo工具github图传使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/theme/%E5%AE%89%E8%A3%85%E3%80%81%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AEicarus%E4%B8%BB%E9%A2%98%E4%B8%AD%E6%96%87%E7%89%88.html">安装、部分配置icarus主题中文版</a></li>
+</ul>
+<p><strong>技术知识点</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/java/basic/Java%E5%B9%B6%E5%8F%91%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9.html">Java并发知识点</a><br></li>
+</ul>
+<p><strong>法律法规</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://search.chinalaw.gov.cn/search2.html">法律法规数据库</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97%E6%B3%95.html">中华人民共和国国旗法</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%AE%AA%E6%B3%95.html">中华人民共和国宪法</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B6%88%E8%B4%B9%E8%80%85%E6%9D%83%E7%9B%8A%E4%BF%9D%E6%8A%A4%E6%B3%95.html">中华人民共和国消费者权益保护法</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%88%91%E4%BA%8B%E8%AF%89%E8%AE%BC%E6%B3%95.html">中华人民共和国刑事诉讼法</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%A9%9A%E5%A7%BB%E6%B3%95.html">中华人民共和国婚姻法</a></li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95.html">中华人名共和国网络安全法</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/law/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%8A%B3%E5%8A%A8%E6%B3%95.html">中华人民共和国劳动法</a><br></li>
+</ul>
+<p><strong>其他</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://removeif.github.io/music1/">网易云音乐歌单分享</a></li>
+</ul>
+<br>
+
+<h4 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h4><p><strong>2020计划</strong></p>
+<hr>
+<p>2019.12.31</p>
+<blockquote>
+<p><strong>2020-GOALS</strong>              </p>
+<ul>
+<li><input disabled="" type="checkbox"> 跑两三场马拉松</li>
+</ul>
+</blockquote>
+<p><strong>2019计划</strong></p>
+<hr>
+<p>2018.12.31&#x2F;21:59:00-&gt;更新于2019.12.31</p>
+<blockquote>
+<p><strong>2019-GOALS</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 购买的专业书籍至少看完一遍（并发、重构、设计模式…）-&gt; 95%<br><strong>额外：</strong></li>
+<li><input checked="" disabled="" type="checkbox"> 追了很多剧<br><strong>总结：</strong></li>
+<li>有优点有缺点，没坚持下来的还是太多，追了太多剧。以后多学习，多思考！</li>
+</ul>
+</blockquote>
+<br>
+
+<h4 id="时间轴记录"><a href="#时间轴记录" class="headerlink" title="时间轴记录"></a>时间轴记录</h4><hr>
+<div class="time-axis-main">
+    <ul class="time-axis"></ul>
+</div>
+<script src="/js/about-me.js"></script>
+<br>
+<br>
+  </div>
+  <div>
+  
+  <div class="post-note note-warning copyright" style="margin-top: 42px">
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="http://example.com/about">theme-kaze</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="http://example.com/about/index.html">http://example.com/about/index.html</a></p>
+    <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+  </div>
+  
+  </div>
+</article>
+<div class="nav">
+  
+  
+</div>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E4%BF%A1%E6%81%AF"><span class="toc-text">博客信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E7%AB%99%E6%8E%A8%E8%8D%90%E7%B4%A2%E5%BC%95"><span class="toc-text">本站推荐索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E5%88%92"><span class="toc-text">计划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%BD%B4%E8%AE%B0%E5%BD%95"><span class="toc-text">时间轴记录</span></a></li></ol>
+</div></main>
+          <aside class="left-column">
+            
+            <div class="card card-author">
+              
+<img src="/img/Kaze.png" class="author-img">
+
+<p class="author-name">theme-kaze</p>
+<p class="author-description">designed by theme-kaze</p>
+<div class="author-message">
+  <a class="author-posts-count" href="/archives">
+    <span>1</span>
+    <span>Posts</span>
+  </a>
+  <a class="author-categories-count" href="/categories">
+    <span>0</span>
+    <span>Categories</span>
+  </a>
+  <a class="author-tags-count" href="/tags">
+    <span>0</span>
+    <span>Tags</span>
+  </a>
+</div>
+
+            </div>
+            
+            <div class="sticky-tablet">
+  
+  
+  
+  <article class="card card-content">
+    <div class="categories-card">
+  <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>Categories</div>
+  <div class="categories-list">
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content">
+    <div class="tags-card">
+  <div class="tags-header"><i class="iconfont icon-biaoqian" style="padding-right: 2px;"></i>hot tags</div>
+  <div class="tags-list">
+    
+  </div>
+</div>
+  </article>
+  
+  
+  <article class="card card-content widescreen-archive">
+    <div class="archive-card">
+  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
+  <div class="archive-card-list">
+    
+    
+    
+      
+        
+        
+        
+      
+    
+    
+      <a href="/archives/2024" class="archive-card-list-item">
+          2024
+          <span class="archive-card-list-item-badge">1</span>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+</div>
+          </aside>
+          <aside class="right-column">
+            <div class="sticky-widescreen">
+  
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header"><i class="iconfont icon-wenzhang_huaban" style="padding-right: 2px;"></i>Recent Posts</div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2024-12-17</div>
+        <a href="/2024/12/17/hello-world/"><div class="recent-posts-item-content">Hello World</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="archive-card">
+  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
+  <div class="archive-card-list">
+    
+    
+    
+      
+        
+        
+        
+      
+    
+    
+      <a href="/archives/2024" class="archive-card-list-item">
+          2024
+          <span class="archive-card-list-item-badge">1</span>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>Copyright ©
+          
+          2020 -
+          
+          2024
+        </span>
+        <a href="/" class="footer-link">theme-kaze demo </a>
+      </div>
+    </div>
+
+    
+    <div class="footer-dsc">
+      
+      
+      Powered by
+      <a href="https://hexo.io/" class="footer-link" target="_blank" rel="nofollow noopener noreferrer">&nbsp;Hexo </a>
+      
+      
+      <span>&nbsp;|&nbsp;</span>
+      
+      
+      
+      Theme -
+      <a href="https://github.com/theme-kaze" class="footer-link" target="_blank"
+        rel="nofollow noopener noreferrer">&nbsp;Kaze</a>
+      
+    </div>
+    
+    
+    
+    
+</footer>
+  <a role="button" id="scrollbutton" class="basebutton" >
+  <i class="iconfont icon-arrowleft button-icon"></i>
+</a>
+<a role="button" id="menubutton" class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a role="button" id="popbutton" class="basebutton">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a role="button" id="darkbutton" class="basebutton darkwidget">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+
+  
+  
+  
+  <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img');
+    var i;
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a');
+      wrapper.setAttribute('data-fslightbox', 'gallery');
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'));
+      wrapper.setAttribute('style', 'width: 100%; display: flex; justify-content: center;');
+      img[i].parentElement.insertBefore(wrapper, img[i]);
+      wrapper.appendChild(img[i]);
+    }
+    refreshFsLightbox();
+  }
+</script>
+<script>loadScript("//cdn.jsdelivr.net/npm/fslightbox@3.1.0/index.min.js", addImgLayout)</script>
+  
+  
+  
+<script src="/js/main.js"></script>
+
+  
+  
+  <script>
+    var addLazyload = function () {
+      var observer = lozad('.lozad', {
+        load: function (el) {
+          el.srcset = el.getAttribute('data-src');
+        },
+        loaded: function (el) {
+          el.classList.add('loaded');
+        }
+      });
+      observer.observe();
+    }
+  </script>
+  <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
+  
+  
+</body>
+
+</html>
